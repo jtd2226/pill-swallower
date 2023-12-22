@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "start",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn dev --port 3733",
+      "autoAttachChildProcesses": false,
+      "postDebugTask": "destroy"
+    }
+  ]
+}
