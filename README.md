@@ -1,3 +1,37 @@
+# Plan
+
+- Need to set up way to test with actual camera and calculating in realtime. May have to figure out how to set up your own tunneling via joeltdavis.com and combing through localtunnel source bode
+
+Current working implementation idea:
+
+Similar to how bank apps do it:
+Set up inner rectangular boundary within camera view and instruct user to align pills within boundary in order to detect background. (Can possibly even clip outer bounds of camera so that this detection is hidden from users instead of showing weird yellow border)
+
+Find pills by identifying colors that combine into shapes that dont match the background.
+
+Edge cases:
+
+- multicolor background?? (check against all colors from background)
+- pills similar color to background? (hopefully non-bg color matching can be super strict allowing for precise boundary detection)
+
+# Plan B
+
+Do multiple scans and try to identify shapes that are most likely to be pills with the following considerations:
+
+- see if there are multiple shapes of similar size, if so we know what color to look for.
+  - Due to high potential variance in luminance, match based on detection of colors not found in shapes or background.
+- see if boundary pixels for pills have some common features
+- see if interpolation can be used to accurately indentify boundary pixels
+- more sophisticated anti-matching
+  - if pixel is suspected of being a non-match, try performing other checks to confirm
+- try to identify background by getting most common color of pixels that don't have boundaries pertaining to the most common shape in the image
+- after initial scans, try to find pills by matching by colors found in the most common pill-like shape found
+- big pp
+
+# Plan C
+
+combine techniques from A and B
+
 # Resources
 
 - [Binary Robust Independent Elementary Features](https://github.com/eduardolundgren/tracking.js/blob/master/src/features/Brief.js)
