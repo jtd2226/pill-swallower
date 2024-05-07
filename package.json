@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "proxy": "ssh -R 80:localhost:3733 ssh.localhost.run"
+    "proxy": "ssh -R 80:localhost:3733 localhost.run"
   },
   "dependencies": {
     "localtunnel": "^2.0.2",
@@ -24,5 +24,6 @@
     "eslint-config-next": "14.0.4",
     "typescript": "^5"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "packageManager": "yarn@4.2.1"
 }

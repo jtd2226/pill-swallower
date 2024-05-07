@@ -7,7 +7,7 @@
       "request": "launch",
       "command": "yarn dev",
       "autoAttachChildProcesses": false,
-      "postDebugTask": "destroy",
+      "postDebugTask": "destroy"
     },
     {
       "name": "proxy",
@@ -22,7 +22,12 @@
     {
       "name": "Gobble Gobble",
       "configurations": ["start", "proxy"],
-      "stopAll": false
+      "presentation": {
+        "hidden": false,
+        "group": "",
+        "order": 0
+      },
+      "stopAll": true
     }
   ]
 }

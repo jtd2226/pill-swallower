@@ -82,3 +82,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Tunneling with localhost.run
+
+Default instructions for generating ssh key at [localhost.run](https://localhost.run/docs) don't work.
+
+1. Go to [admin.localhost.run](https://admin.localhost.run) and login with your e-mail
+2. Generate ssh key
+   > ssh-keygen -t ed25519 -C "myemail@example.com"
+3. Add new ssh key at [admin.localhost.run](https://admin.localhost.run)
+4. Run using ssh command
+   > ssh -R 80:localhost:3000 localhost.run
